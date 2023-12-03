@@ -34,7 +34,7 @@ class FileParser {
             "nine" to 9
         )
 
-        val numbers = File("input.txt").readLines()
+        val numbers = File("src/main/resources/Day1_input.txt").readLines()
             .map { line ->
                 val firstDigit = line.firstOrNull { it.isDigit() }?.let { it.toString() to line.indexOf(it) }
                 val firstWord = validNumbers.keys.mapNotNull { key ->

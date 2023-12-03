@@ -1,4 +1,17 @@
 import java.io.File
+
+/**
+ * Calculates the sum of game IDs for which a game is possible.
+ *
+ * A game is possible if the number of red, green, and blue balls required for each set in the game
+ * does not exceed the available number of red, green, and blue balls.
+ *
+ * @param filePath The path to the file containing the game data.
+ * @param redBalls The number of available red balls.
+ * @param greenBalls The number of available green balls.
+ * @param blueBalls The number of available blue balls.
+ * @return The sum of game IDs for which a game is possible.
+ */
 fun sumOfPossibleGameIds(filePath: String, redBalls: Int, greenBalls: Int, blueBalls: Int): Int {
     var sumOfGameIds = 0
     File(filePath).forEachLine { line ->
@@ -26,8 +39,14 @@ fun sumOfPossibleGameIds(filePath: String, redBalls: Int, greenBalls: Int, blueB
     return sumOfGameIds
 }
 
-
-
+/**
+ * Calculates the sum of the powers of all games.
+ *
+ * The power of a game is the product of the maximum number of red, green, and blue balls required for any set in the game.
+ *
+ * @param filePath The path to the file containing the game data.
+ * @return The sum of the powers of all games.
+ */
 fun sumOfGamePowers(filePath: String): Int {
     var sumOfPowers = 0
     File(filePath).forEachLine { line ->
@@ -59,8 +78,13 @@ fun sumOfGamePowers(filePath: String): Int {
     return sumOfPowers
 }
 
+/**
+ * The main function.
+ *
+ * Reads the game data from a file and prints the sum of possible game IDs and the sum of game powers.
+ */
 fun main() {
-    val filePath = "input.txt"
+    val filePath = "src/main/resources/Day2_input.txt"
     val redBalls = 12
     val greenBalls = 13
     val blueBalls = 14
